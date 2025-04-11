@@ -1,0 +1,150 @@
+
+<!--<body>
+    <?php
+        include "partials/header.php"
+    ?>
+
+    <?php
+        if (!empty($_SESSION['user_id'])){
+            echo "vous etes connecté";
+        }
+    ?>
+
+    <?php
+    function db_connect() {
+        
+        $host= "http://localhost:8888";
+        $dbname = "projetFlash";
+        $user= "root";
+        $password = "root";
+
+        $db = new PDO(
+                "mysql: host=$host; dbname=$dbname" ,
+                $user, $password,
+                array (PDO:: MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8", PDO:: MYSQL_ATTR_DIRECT_QUERY=> true) ) ;
+        return $db;
+        
+    }
+    $db=db_connect();
+
+    
+    if (isset($_POST['connexion'])) {
+        $email = htmlspecialchars(trim($_POST['email']));
+        $mdp = htmlspecialchars($_POST['mdp']);
+        $req = $db->prepare('SELECT id,email,mot_de_passe FROM utilisateur WHERE email = :email');
+        $req->execute(array("email" => $_POST['email']));
+        $data = $req->fetch();
+        if (!empty($data)){
+            if ($data['mot_de_passe'] === $mdp){
+                $_SESSION['user_id'] = $data['id'];
+                header('location:connexion.php');
+                echo "c'est bon vous êtes connecté";
+            }else{
+                echo "mauvais mot de passe";
+            }
+        }else{
+            echo "le compte n'existe pas";
+        }
+
+    }
+    ?> -->
+    <!DOCTYPE HTML>
+<html lang="fr">
+
+
+
+<head>
+    <meta charset="utf-8">
+    <title>inscription</title>
+    <link rel="stylesheet" href="tableauDesScores.css"/>
+    <link rel="stylesheet" href="../../partials/header.css">
+    <script src="../../assets/js/scripts.js"></script>
+</head>
+
+
+<body>
+
+<header>
+        <nav>
+            <div class="menu-icon toggle-menu c">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../../games/memory/index.php">Accueil</a></li>
+                <li><a href="../../games/memory/tableauDesScores.php">Scores</a></li>
+                <li><a href="../../joueur.php">Jeu</a></li>
+                <li><a href="../../contact.php">Contact</a></li>
+                <li><a href="../../connexion.php">Connexion</a></li>
+                <li><a href="../../monEspace.php">Mon Espace</a></li>  
+            </ul>
+        </nav>
+</header>
+
+
+    
+            <!--<div class="imageFond">
+            
+                <img src="assets/images/fond.jpg" alt="Image de fond">
+                <div class="imageStexte"> Connexion </div>
+            
+            </div>
+
+            <div class="space-between"></div>  créer un espace -->
+            <form method="post">    
+                <section class="formulaire">
+            <div class="container"> 
+                <input type="email"
+                id="email"
+                name="email"
+                placeholder="Email" />
+            </div>
+            <div class=container>
+                <input type="password"
+                id="mdp"
+                name="mdp"
+                placeholder="Mot de passe"/>
+
+                
+            </div>
+            <div class="container">
+                <button type="submit" name="connexion">se connecter</button>
+            </div>
+            <section class="insciption"> 
+                <a href="inscription.php" >toujours pas connecté ?</a>
+            </section>
+            </form>
+        </section>
+            
+        <div class="space-between"></div> <!-- créer un espace -->
+    
+</body>
+
+    
+
+<footer class="footer">
+    <div class="footer-section">
+            <h3>Information</h3>
+            <p>(jsp le nom).</p>
+            <p><strong>Tel :</strong> 06 05 04 03 02</p>
+            <p><strong>Email :</strong> nemecontacterpas@svp.com</p>
+            <p><strong>Location :</strong> Paris</p>
+            <div class="social-icons">
+                <a href="#"><img src="/assets/images/twitter.jpeg" alt="Twitter"></a>
+                <a href="#"><img src="/assets/images/google.png" alt="Google"></a>
+                <a href="#"><img src="/assets/images/pinterest.png" alt="Pinterest"></a>
+                <a href="#"><img src="/assets/images/instagram.png" alt="Instagram"></a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h3>(jsp le nom)</h3>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">métabolisme de base</a></li>
+                <li><a href="#">Scanner</a></li>
+                <li><a href="#">Nous contacter</a></li>
+            </ul>
+    </div>
+</footer>
+</html>

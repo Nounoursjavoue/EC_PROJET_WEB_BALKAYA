@@ -1,0 +1,476 @@
+/* Responsive */
+@media (max-width: 767px) {
+    .menu-icon {
+      display: flex; /* Afficher le menu hamburger sur mobile */
+    }
+  
+    .nav-links {
+      display: none; /* Masquer les liens de navigation sur mobile */
+    }
+  
+    .imageFond {
+      width: 100%; /* Image de fond à pleine largeur */
+    }
+  
+    .imageFond img {
+      width: 100%;
+      max-height: 250px;
+    }
+
+    h2 section{
+        padding: 0 10px;
+    }
+
+    .container input[type="email"],
+    .container input[type="password"],
+    .container button {
+        width: 100%;
+        max-width: 280px; /* Largeur maximum pour éviter un étirement excessif */
+    }
+  }
+
+  @media (min-width: 767px) {
+    .menu-icon {
+      display: none; /* Masquer le menu hamburger en version bureau */
+    }
+  
+    .nav-links {
+      display: flex; /* Afficher le menu normalement */
+    }
+  
+  }
+  body {
+    background-color: #1b1f3b; /* Bleu nuit pour le fond */
+    color: #e0e4f1; /* Couleur de texte plus douce */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+    
+    /* Styles pour le menu */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #2c2f5e;
+      color: #e0e4f1;
+    }
+    
+    header .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    
+    .menu-icon {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      width: 30px;
+    }
+    
+    .menu-icon .line {
+      height: 4px;
+      background-color: #e0e4f1;
+      margin: 5px 0;
+    }
+    
+    /* Styles pour les liens de navigation */
+    .nav-links {
+      list-style-type: none;
+      display: none; /* Masqué par défaut */
+    }
+    
+    .nav-links li a {
+      background-color: transparent;
+      color: #e0e4f1;
+      text-decoration: none;
+      display: block;
+      padding: 10px;
+      font-weight: bold;
+      transition: color 0.3s, background-color 0.3s;
+    }
+    
+    .nav-links li a:hover {
+      color: #1b1f3b;
+      background-color: #f5a623;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    
+    /* Affichage du menu quand actif */
+    .nav-links.active {
+      display: block;
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Centre le formulaire horizontalement */
+      justify-content: center;
+      margin: 20px auto; /* Espace autour du formulaire */
+      padding: 20px;
+      background-color: #23224d; /* Fond sombre en harmonie avec la page */
+      border-radius: 12px; /* Coins arrondis pour un design moderne */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Ombre pour effet de profondeur */
+      max-width: 400px;
+      width: 50%; /* Largeur ajustable */
+      max-width: 500px; /* Limite maximale */
+  }
+  
+  form .filter {
+      margin-bottom: 15px; /* Espacement entre le champ et le bouton */
+  }
+  
+  form #champ {
+      width: 100%; /* Largeur du champ pour s'adapter au formulaire */
+      padding: 10px 15px;
+      font-size: 16px;
+      color: #e0e4f1; /* Couleur claire pour le texte */
+      background-color: #1b1f3b; /* Fond bleu nuit */
+      border: 1px solid #7850c1; /* Bordure assortie au tableau */
+      border-radius: 8px; /* Coins arrondis */
+      outline: none; /* Supprime l'effet de focus par défaut */
+      transition: box-shadow 0.3s, border-color 0.3s;
+  }
+  
+  form #champ:focus {
+      border-color: #f5a623; /* Changement de couleur au focus */
+      box-shadow: 0 0 8px rgba(245, 166, 35, 0.5); /* Effet lumineux */
+  }
+  
+  button#Rechercher {
+      background-color: #f5a623; /* Couleur orange */
+      color: #1b1f3b; /* Contraste avec le fond */
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      width: 50%; /* Ajuste la largeur du bouton */
+      max-width: 200px; /* Limite maximale de largeur */
+      text-align: center; /* Centre le texte */
+  }
+  
+  button#Rechercher:hover {
+      background-color: #ffde9e; /* Couleur plus claire au survol */
+      transform: scale(1.05); /* Légère augmentation de taille */
+  }
+  
+  button#Rechercher:active {
+      transform: scale(0.95); /* Effet de clic */
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+   /* l'image de fond */
+
+   .imageFond{
+    max-width: 100%;
+    width: 100vw;
+    max-height: 300px;
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Ombre pour effet de profondeur */
+  }
+  
+  .imageFond img{
+    width: 100%;
+    height: auto;
+  }
+
+  /* pour positionné l'image au centre 
+  fait grace a l'aide de chat gpt  */
+
+  .imageFond .imageStexte{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #e0e4f1; 
+    font-size: clamp(18px, 4vw, 36px); /* ajuste la taille de la police (responsive) */
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #151023;
+    padding: 10px; 
+    box-sizing: border-box; 
+    max-width: 80%; 
+  }
+
+  .space-between {
+    height: 80px; /* Contrôle l'espace entre le tableau et le footer */
+}
+
+  
+
+/* le formulaire/corps de la page */
+.space-between {
+    height: 40px; /* Contrôle l'espace entre le tableau et le footer */
+}
+  body {
+    background-color: #1b1f3b; /* Bleu nuit pour le fond */
+    color: #e0e4f1; /* Couleur de texte plus douce */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+.formulaire{
+    background-color: rgba(44, 47, 94, 0.45); /* Fond transparent pour mettre en valeur le formulaire */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 400px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Ombre pour effet de profondeur */
+  }
+
+  h2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    color: #e0e4f1;
+}
+
+.container input[type="email"],
+.container input[type="password"],
+.container input[type="text"] {
+    width: 280px;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background-color: #2c2f5e;
+    color: #e0e4f1;
+    font-size: 14px;
+    text-align: center;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.container input[type="email"]::placeholder,
+.container input[type="password"]::placeholder, 
+.container input[type="text"]::placeholder {
+    color: #aab2d5;
+}
+
+.container input[type="email"]:focus,
+.container input[type="password"]:focus,
+.container input[type="text"]:focus {
+    outline: none;
+    background-color: #3b3f6d;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+}
+
+.container button {
+  justify-content: center;
+    width: 280px;
+    padding: 12px;
+    background-color: #f5a623;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.container button:hover {
+    background-color: #ffde9e;
+}
+
+h2 .insciption{
+    font-size: 18px;
+    color: #f5a623;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+h2 section:hover{
+    color: #ffde9e;
+}
+
+.container {
+  margin-bottom: 8px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+/* .rectangle : centrer la barre */
+.rectangle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;  /* Centrer la barre horizontalement */
+  width: 280px;    /* Largeur fixe de la barre */
+  height: 20px;    /* Hauteur de la barre */
+  border: 2px solid #2c2f5e;
+  border-radius: 10px; 
+  background-color: #3b3f6d;
+  position: relative; /* Pour que le texte soit positionné au-dessus */
+}
+
+/* Les divs à l'intérieur de .rectangle qui créent les différentes barres de niveau */
+.rectangle div {
+  height: 100%; /* Prendre toute la hauteur de la barre */
+  border-radius: 10px;
+}
+
+/* Niveau faible */
+.rectangle .weak {
+  width: 90px;   /* Largeur de la barre faible */
+  background-color: red;
+}
+
+/* Niveau moyen */
+.rectangle .medium {
+  width: 160px;  /* Largeur de la barre moyenne */
+  background-color: #f5a623;
+}
+
+/* Niveau fort */
+.rectangle .strong {
+  width: 280px;  /* Largeur de la barre forte */
+  background-color: green;
+}
+
+/* Texte centré dans la barre */
+.rectangle span {
+  position: absolute;
+  top: 50%;         
+  left: 50%;        
+  transform: translate(-50%, -50%);  
+  color: #fefefe;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 1;       /* Assurer que le texte est au-dessus de la barre */
+}
+
+.container input[type="password"]#confirmermdp {
+  margin-top: 8px; 
+}
+
+
+
+
+
+
+
+
+/*.rectangle {
+  margin-bottom: 8px;
+  display: flex;
+  width: 280px; 
+  height: 10px; 
+  background-color: #fefefe; 
+  background-color: #3b3f6d;
+  border: 2px solid #2c2f5e;
+  border-radius: 10px; 
+}
+
+.rectangle .weak{
+  font-size: 7px;
+  border-radius:10px ;
+  height: 10px;
+  width: 90px;
+  background-color: red;
+}
+
+.rectangle .medium{
+  border-radius: 10px;
+  height: 10px;
+  width: 160px;
+  background-color: #f5a623 ;
+}
+
+.rectangle .strong{
+  border-radius: 10px;
+  height: 10px;
+  width: 280px;
+  background-color: green;
+}
+
+.rectangle span {
+  margin-left: 10px;
+  color: #fff;
+  font-size: 12px;
+} */
+
+/* le footer */
+footer{
+    
+    padding: 200,0,200,0;
+    margin : 200;
+    box-sizing: content-box;
+    }
+    
+    .footer {
+        background-color: #23224d;
+        color: #e0e4f1;
+        display: flex;
+        justify-content: space-around;
+        padding: 30px;
+        font-family: Arial, sans-serif;
+    }
+    
+    .footer-section {
+        max-width: 200px;
+    }
+    
+    .footer-section h3 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+    
+    .footer-section p,
+    .footer-section a {
+        font-size: 0.9em;
+        color: #FFFFFF;
+    }
+    
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .footer-section ul li {
+        margin: 5px 0;
+    }
+    
+    .footer-section ul li a {
+        text-decoration: none;
+        color: #f5a623; 
+    }
+    .footer-section ul li a:hover {
+        color: #ffde9e; 
+    }
+    
+    /* Icônes des réseaux sociaux */
+    .social-icons {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    
+    .social-icons a img {
+        width: 30px;
+        height: 30px;
+    }
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+    }
+    
+    footer {
+        margin-top: auto;
+    }
