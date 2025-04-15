@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Calcule metabolisme</title>
   <link rel="stylesheet" href="assets/css/mbCalculeur.css">
+  <script src="assets/js/scripts.js"></script>
 </head>
 
 <header>
@@ -22,11 +23,44 @@
 </header>
 <body>
 
-<h1>Commencer a compter vos calories!!</h1>
-
+    <h1>Quelle est votre metabolisme basale</h1>
+    
 <div class="conteneur-calculeMB">
-    <script type="module" src="assets/js/calculeMB.js"></script>
+<div class="metabolismeBasale">
+    <div class="selection">
+        <label for="sexe">Vous etes un Homme ou une Femme ? :</label>
+        <select id="sexe">
+            <option value="Homme">Homme</option>
+            <option value="Femme">Femme</option>
+        </select>
+        <label for="lvlActivite">Quelle est votre niveau d'activité? :</label>
+        <select id="lvlActivite">
+            <option value="1.2">Sédentaire</option>
+            <option value="1.375">Légèrement actif (1-3j/semaine)</option>
+            <option value="1.55">Modérément actif (3-5j/semaine)</option>
+            <option value="1.725">Très actif (6-7j/semaine)</option>
+            <option value="1.9">Extrêmement actif</option>
+        </select>
+    </div>
+
+        <!--les inputs de l'utilisateur-->
+        <div class="inputUtilisateur">
+            <label for="age">Votre âge :</label>
+                <input type="number" id="age" min="10" max="120">
+            <label for="taille">Votre taille (en cm) :</label>
+                <input type="number" id="taille" min="30" max="250">
+            <label for="poids">Votre poids (en kg) :</label>
+                <input type="number" id="poids" min="30" max="300">
+            <button id="calculerMB">Calculer</button>
+        </div>
+
+        <div class="resultat">
+            <p> Votre metabolisme basale est de :</p>
+        </div>    
 </div>
+
+</div>
+<script src="assets/js/calculeMB.js"></script>
 </body>
 
 <footer class="footer">

@@ -129,22 +129,52 @@ body {
     align-items: center;
     margin: auto;
     color: #333;
+  } 
+
+/* selection */
+
+
+  input[type="number"], select {
+    padding: 5px;
+    font-size: 1rem;
+    border: 2px solid #6a1b9a;
+    border-radius: 5px;
+    margin-right: 10px;
   }
-  
-  video {
-    width: 320px;
-    height: auto;
-    border: 2px solid #333;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  }
-  
-  #result {
-    margin-top: 20px;
+
+  label {
     font-size: 1.2rem;
-    font-weight: bold;
-    color: green;
+    margin-right: 10px;
   }
+
+  button#calculerMB {
+    margin: auto;
+    justify-content: center;
+    background-color: #f5a623; /* Couleur orange */
+    color: #1b1f3b; /* Contraste avec le fond */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    width: 50%; /* Ajuste la largeur du bouton */
+    max-width: 200px; /* Limite maximale de largeur */
+    max-height: 40px;
+    text-align: center; /* Centre le texte */
+}
+
+button#calculerMB:hover {
+    background-color: #ffde9e; /* Couleur plus claire au survol */
+    transform: scale(1.05); /* Légère augmentation de taille */
+}
+
+button#calculerMB:active {
+    transform: scale(0.95); /* Effet de clic */
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
 
   /* le footer */
 
